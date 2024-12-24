@@ -1,0 +1,52 @@
+
+.flex{
+    display: flex;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.border{
+    border: 2px solid black;
+    margin: 2px;
+}
+
+.outer-most-color{
+    background-color: black;
+}
+
+.outer-box-color{
+    background-color: #121212;
+    color: white;
+}
+
+.inner-box-color{
+    background-color: #1f1f1f;
+    color: white;
+}
+
+.text-color{
+    color: #b3b3b3;
+}
+
+.text-color:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.rounded{
+    border-radius: 7px;
+}
+
+.m-1{
+    margin: 5px;
+}
+
+.p-1{
+    padding: 12px;
+}

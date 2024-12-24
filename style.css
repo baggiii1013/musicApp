@@ -1,0 +1,608 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.logo img {
+  width: 25vw; /* Set specific width */
+  height: auto; /* Maintain aspect ratio */
+  justify-content: center;
+  align-items: center;
+}
+.left {
+  width: 25vw;
+  padding: 25px;
+}
+
+.right {
+  width: 75vw;
+}
+
+/* .home-search{
+    padding: 12px;
+} */
+
+.home ul li {
+  font-size: 27px;
+  font-weight: bold;
+  gap: 10px;
+  width: 30px;
+  list-style: none;
+  padding-top: 9px;
+}
+
+.spotify-mix-900 {
+  font-family: "SpotifyMix", system-ui, -apple-system, sans-serif;
+}
+
+.library {
+  height: 80vh;
+}
+
+.library .heading {
+  margin-bottom: 7px;
+}
+
+.heading {
+  align-items: center;
+  gap: 10px;
+}
+
+.heading h3 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.heading img {
+  width: 2rem;
+  height: auto;
+}
+
+.right {
+  min-height: 75vh;
+  position: relative;
+}
+
+.nav {
+  align-items: center;
+  padding: 5px;
+  justify-content: space-between;
+  border-radius: 40px;
+}
+
+.arrow {
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+.nav .buttons {
+  padding: 2px;
+  margin: 2px;
+}
+
+.nav .buttons .li {
+  padding: 7px;
+  height: 45px;
+  width: 94px;
+  border-radius: 23px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.nav .buttons .li:hover {
+  transform: scale(1.1); /* Increase size by 10% on hover */
+  cursor: pointer; /* Show pointer cursor */
+  background-color: rgb(213, 211, 211);
+  cursor: pointer; /* Show pointer cursor */
+}
+
+.nav .buttons .su {
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  width: 69px;
+}
+
+.nav .buttons .su:hover {
+  transform: scale(1.1); /* Increase size by 10% on hover */
+  cursor: pointer; /* Show pointer cursor */
+  color: rgb(255, 255, 255);
+}
+
+.leftA {
+  border: 2px solid white;
+  border-radius: 13px;
+}
+
+.rightA {
+  border: 2px solid white;
+  border-radius: 13px;
+  margin-left: 5px;
+}
+
+.rcPlay {
+  padding: 10px;
+  padding-bottom: 120px; /* Make space for playBar */
+}
+
+.rcPlay h2 {
+  padding: 7px;
+  font-size: 25px;
+  font-weight: bold;
+}
+.rcPlay .cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-height: 85vh;
+  overflow-y: auto;
+  max-height: calc(85vh - 120px); /* Adjust for playBar */
+  scrollbar-width: thin;
+  scrollbar-color: #b3b3b3 #121212;
+}
+
+/* Custom scrollbar for webkit browsers */
+.rcPlay .cardContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+.rcPlay .cardContainer::-webkit-scrollbar-track {
+  background: #121212;
+  border-radius: 10px;
+}
+
+.rcPlay .cardContainer::-webkit-scrollbar-thumb {
+  background: #b3b3b3;
+  border-radius: 10px;
+  border: 2px solid #121212;
+}
+
+/* For Firefox */
+.rcPlay .cardContainer {
+  scrollbar-width: thin;
+  scrollbar-color: #b3b3b3 #121212;
+}
+
+.rcPlay .card {
+  width: 100%;
+  max-width: 200px;
+  padding: 16px;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.rcPlay .card:hover {
+  cursor: pointer;
+  background-color: #121212;
+  border-radius: 10px;
+}
+
+.rcPlay .card img {
+  width: 101%;
+  border-radius: 9px;
+}
+
+.rcPlay .card h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.rcPlay .card p {
+  color: #b3b3b3;
+  font-size: 14px;
+  font-weight: 400;
+}
+/* 
+.rcPlay .card .play svg{
+    background-color: #1dd960;
+    border-radius: 23px;
+    width: 40px;
+    height: auto;
+    
+} */
+
+.rcPlay .card .play {
+  position: relative;
+  display: none;
+  position: absolute;
+  right: 10px;
+  bottom: 110px;
+}
+
+.rcPlay .card:hover .play {
+  display: block;
+}
+
+.rcPlay .card .play svg {
+  position: absolute;
+  background-color: #1dd960;
+  border-radius: 50%;
+  width: 36px;
+  height: auto;
+  padding: 10px;
+  transition: transform 0.2s ease;
+  right: 8px;
+  top: -14px;
+}
+
+.rcPlay .card .play svg:hover {
+  transform: scale(1.1);
+}
+.playBar {
+  position: fixed;
+  bottom: 0;
+  left: 281px;
+  width: calc(83% - 88px);
+  background-color: black;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.playBar .currentTime,
+.playBar .totalTime {
+  color: #b3b3b3;
+  font-size: 12px;
+  position: relative;
+  top: -8px;
+}
+
+/* Update seekBar position */
+.playBar .seekBar {
+  width: calc(47vw - 143px); /* Adjusted width to account for time displays */
+}
+
+.playBar .seekBar {
+  width: calc(47vw - 143px);
+  height: 4px;
+  background-color: #4d4d4d;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+.playBar .seekBar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #1db954;
+  border-radius: 4px;
+  width: var(--seek-before-width, 0%);
+  z-index: 2;
+  transition: width 0.1s ease;
+}
+
+.playBar .circle {
+  width: 12px;
+  height: 12px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: var(--seek-before-width, 0%);
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.playBar .seekBar:hover .circle {
+  opacity: 1;
+}
+
+.playBar .currentTime,
+.playBar .totalTime {
+  color: #b3b3b3;
+  font-size: 11px;
+  min-width: 40px;
+  text-align: center;
+}
+
+.playBar .flex {
+  align-items: center;
+  gap: 8px;
+}
+
+.playBar .controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.controls .previousButton {
+  width: 21px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.controls .previousButton:hover {
+  transform: scale(1.1);
+  filter: brightness(0) invert(1);
+}
+
+.controls .nextButton {
+  width: 21px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.controls .nextButton:hover {
+  transform: scale(1.1);
+  filter: brightness(0) invert(1);
+}
+
+.controls .playButton {
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 39px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.controls .playButton:hover {
+  transform: scale(1.1);
+  background-color: #b3b3b3;
+}
+
+.songs {
+  max-height: 71vh;
+  overflow-y: auto;
+}
+
+.songs-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.song-item.active {
+  background-color: #282828;
+  border-radius: 10px;
+}
+
+.song-item.active span {
+  color: white;
+}
+
+.library .songs .songs-grid::-webkit-scrollbar {
+  width: 10px;
+}
+
+.library .songs .songs-grid::-webkit-scrollbar-track {
+  background: #121212;
+  border-radius: 10px;
+}
+
+.library .songs .songs-grid::-webkit-scrollbar-thumb {
+  background: #b3b3b3;
+  border-radius: 10px;
+  border: 2px solid #121212;
+}
+
+/* For Firefox */
+.library .songs .songs-grid {
+  scrollbar-width: thin;
+  scrollbar-color: #b3b3b3 #121212;
+}
+
+.songs ul {
+  list-style: none;
+}
+
+.songs ul li .cover {
+  position: relative;
+  width: 55px;
+  height: auto;
+  border-radius: 3px;
+}
+
+.songs ul li {
+  overflow: hidden;
+  position: relative;
+  gap: 10px;
+  padding: 10px;
+  margin-top: 8px;
+  justify-content: flex-start;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.songs ul li .svg {
+  display: none;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.songs ul li:hover .svg {
+  display: block;
+}
+
+.songs ul li:hover .cover {
+  filter: brightness(0.6);
+}
+
+.songs ul li .svg:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.songs ul li {
+  gap: 10px;
+  padding: 10px;
+  margin-top: 8px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.songs ul li:hover {
+  background-color: #121212;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.songs ul li span {
+  color: #b3b3b3;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+.playBar .songInfo {
+  display: flex;
+  gap: 5px;
+}
+
+.playBar .songInfo img {
+  width: 93px;
+  height: 66px;
+  border-radius: 6px;
+}
+@media screen and (max-width: 1050px) {
+  .left {
+    position: fixed;
+    left: -300px; /* Increased from -250px */
+    top: 0;
+    height: 100vh;
+    width: 280px;
+    background-color: #121212;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Update right section */
+  .right {
+    margin-left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 60px 20px 120px 20px; /* Added bottom padding for playBar */
+  }
+
+  /* Update playBar */
+  .playBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 32px);
+    margin: 16px;
+    z-index: 999;
+    gap: 5px;
+  }
+
+  /* Hide overflow on body when sidebar is open */
+  body.sidebar-open {
+    overflow: hidden;
+  }
+
+  /* Add backdrop when sidebar is open */
+  .backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .backdrop.show {
+    display: block;
+  }
+
+  .left.show {
+    left: 0; /* Show sidebar when .show class is added */
+  }
+
+  .hamburger-menu {
+    display: none; /* Hide by default on desktop */
+  }
+
+  .hamburger-menu {
+    display: flex;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 1002;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .hamburger-menu svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+  }
+
+  .playBar .flex {
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  /* Adjust playBar layout */
+  .playBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 10px 16px;
+    background-color: #121212;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+
+    height: 13%;
+  }
+
+  .playBar {
+    width: calc(100% - 32px);
+    margin: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .playBar .songInfo {
+    order: 1;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .playBar .controls {
+    order: 2;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .playBar .seekBar {
+    order: 3;
+    width: 100%;
+  }
+
+  /* Adjust right section to avoid playbar overlap */
+  .right {
+    padding-bottom: 100px;
+  }
+}
